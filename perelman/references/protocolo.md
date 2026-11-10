@@ -1,4 +1,6 @@
-# Perelman — protocolo v0.3
+# Perelman — protocolo v0.3.0
+
+Edição experimental publicada originalmente como `0.3`.
 
 ## 1. Finalidade e unidade de trabalho
 
@@ -188,6 +190,6 @@ Ativar quando o pesquisador pedir uma resposta restrita a uma base ou designar f
 
 **Estatuto nesta versão.** A base de mil livros é um recurso externo previsto. A consulta automatizada depende do acesso ao banco e da identificação do seu esquema. Antes de considerar a integração validada, testar um pedido com suporte suficiente, um com suporte parcial e um fora do material autorizado. O envio pela interface foi verificado em simulação. A chamada direta da skill já produziu uma devolutiva EX04 na conversa.
 
-## 9. Fechamento da versão 0.3
+## 9. Fechamento da versão 0.3.0
 
 Esta versão consolida os dois modos de pedido, o preenchimento de lacunas, o mapa das oito funções e o procedimento do modo Acervo. A versão 0.2 documenta a etapa anterior. A validação do fluxo com a base de mil livros depende da sua disponibilização.
