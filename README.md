@@ -2,13 +2,13 @@
 
 **Exemplificar na escrita e na pesquisa | Exemplification for Academic Writing and Research**
 
-Protocolo de **Itamar Freitas**, versão **0.3 experimental**, elaborado com assistência de IA.
+Protocolo de **Itamar Freitas**, versão **0.3.0 experimental**, elaborado com assistência de IA. A edição foi publicada originalmente como `0.3`.
 
 Perelman ajuda a criar, localizar e avaliar exemplos em textos acadêmicos, aulas e investigações. O nome homenageia Chaïm Perelman. A base retórica é o *Tratado da argumentação*, escrito com Lucie Olbrechts-Tyteca. As fórmulas EX01, EX02 e EX03 preservam o crédito à dupla. Cada ficha identifica suas outras âncoras e as adaptações metodológicas.
 
 ## Uso direto
 
-Em um ambiente compatível com skills, instale a pasta [perelman](perelman) como uma unidade, com o arquivo [SKILL.md](perelman/SKILL.md) e suas referências. Em uma conversa sem a skill instalada, forneça o [SKILL.md](perelman/SKILL.md) e o [protocolo v0.3](perelman/references/protocolo.md), além do trecho ou da fonte que deseja examinar. Esse uso vale para a conversa em que os arquivos forem fornecidos.
+Em um ambiente compatível com skills, instale a pasta [perelman](perelman) como uma unidade, com o arquivo [SKILL.md](perelman/SKILL.md) e suas referências. Em uma conversa sem a skill instalada, forneça o [SKILL.md](perelman/SKILL.md) e o [protocolo v0.3.0](perelman/references/protocolo.md), além do trecho ou da fonte que deseja examinar. Esse uso vale para a conversa em que os arquivos forem fornecidos.
 
 > Use Perelman para preencher [EXEMPLO AQUI] no parágrafo abaixo. Integre o exemplo ao argumento e deixe a justificativa da fórmula em uma nota separada.
 
