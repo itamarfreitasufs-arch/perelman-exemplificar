@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Para citar este protocolo, use a referência abaixo e informe a versão consultada."
 title: "Perelman — Exemplificar na escrita e na pesquisa"
-version: "0.3"
+version: "0.3.0"
 type: software
 authors:
   - family-names: Freitas
