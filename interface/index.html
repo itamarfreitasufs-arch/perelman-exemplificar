@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perelman — Exemplificar na escrita e na pesquisa</title>
+<style>body{font:16px system-ui;margin:0 auto;max-width:760px;color-scheme:light dark} h1{margin:16px 12px;font-size:1.3em}</style>
+</head>
+<body>
+<h1>Perelman — Exemplificar na escrita e na pesquisa</h1>
+<div id="exemplificar-orientado" class="viz-dotted-background">
+<style>
+#exemplificar-orientado{padding:12px;color-scheme:light dark}
+#exemplificar-orientado .shell{background:light-dark(#fff,#191b20);color:light-dark(#23282d,#eef1f4);border:1px solid light-dark(#dbe1e5,#414650);border-radius:14px;padding:18px;display:grid;gap:14px}
+#exemplificar-orientado [hidden]{display:none!important}
+#exemplificar-orientado h2,#exemplificar-orientado p{margin:0}
+#exemplificar-orientado .bar{display:flex;flex-wrap:wrap;gap:8px}
+#exemplificar-orientado form,#exemplificar-orientado output{display:grid;gap:9px;min-width:0}
+#exemplificar-orientado button,#exemplificar-orientado input,#exemplificar-orientado textarea{font:inherit;min-height:44px;border:1px solid light-dark(#cdd6da,#59616b);border-radius:8px;padding:7px 10px;background:light-dark(#f4f7f8,#252b32);color:inherit;box-sizing:border-box;max-width:100%}
+#exemplificar-orientado input{width:100%;font-size:max(1em,16px)}
+#exemplificar-orientado textarea{width:100%;resize:vertical;font-size:max(1em,16px)}
+#exemplificar-orientado button[aria-pressed=true],#exemplificar-orientado button[type=submit]{background:light-dark(#155b50,#a7decc);color:light-dark(#fff,#142a25)}
+#exemplificar-orientado output[data-inline]{background:transparent;padding:0}
+#exemplificar-orientado output{background:light-dark(#f2f6f5,#222b2b);border-radius:9px;padding:12px;overflow-wrap:anywhere}
+#exemplificar-orientado [data-answer]{white-space:pre-wrap}
+#exemplificar-orientado [data-picker]{display:grid;gap:4px;padding:9px;border:1px solid light-dark(#cdd6da,#59616b);border-radius:9px;background:light-dark(#f4f7f8,#252b32)}
+#exemplificar-orientado .function-group{display:grid;gap:2px}
+#exemplificar-orientado .function-group strong{padding:5px 6px 0}
+#exemplificar-orientado .function-group button{width:100%;text-align:left;border-color:transparent;background:transparent;padding-left:22px}
+#exemplificar-orientado .function-group button:hover{background:light-dark(#e1e7e7,#373f47)}
+#exemplificar-orientado [data-guided-field]{display:grid;gap:6px}
+#exemplificar-orientado .guided-entry{display:flex;gap:8px;flex-wrap:wrap}
+#exemplificar-orientado .guided-entry input{flex:1 1 220px;min-width:0}
+</style>
+<section class="shell" aria-label="Perelman">
+<div class="bar" role="group" aria-label="Modo de entrada">
+<button type="button" data-mode="direct" aria-pressed="true">Pedido direto</button>
+<button type="button" data-mode="guided" aria-pressed="false" aria-expanded="false" aria-controls="exemplificar-funcoes">Pedido orientado</button>
+</div>
+<div id="exemplificar-funcoes" data-picker hidden>
+<p>O que você quer que o exemplo ajude a fazer?</p>
+<div class="function-group"><strong>Compreender</strong>
+<button type="button" data-function="idea">Esclarecer uma ideia</button>
+<button type="button" data-function="distinguish">Distinguir casos parecidos</button>
+</div>
+<div class="function-group"><strong>Aprender ou ensinar</strong>
+<button type="button" data-function="do">Aprender a fazer algo</button>
+<button type="button" data-function="transfer">Reconhecer a mesma operação em outro contexto</button>
+<button type="button" data-function="learner">Verificar se o aprendiz consegue produzir um exemplo</button>
+</div>
+<div class="function-group"><strong>Argumentar</strong>
+<button type="button" data-function="document">Sustentar que algo ocorreu</button>
+<button type="button" data-function="regular">Propor uma regularidade</button>
+<button type="button" data-function="counter">Contestar uma afirmação universal</button>
+</div>
+</div>
+<form data-direct>
+<label for="exemplificar-pedido">Seu pedido</label>
+<textarea id="exemplificar-pedido" rows="2" required>Dê um exemplo de atuação historicista.</textarea>
+<div class="bar"><button type="button" data-answer-button>Ver devolutiva</button></div>
+</form>
+<form data-guide hidden>
+
+<div data-guided-field hidden>
+<label for="exemplificar-pedido-guiado" data-guided-label></label>
+<div class="guided-entry">
+<input id="exemplificar-pedido-guiado" type="text" enterkeyhint="send" placeholder="Digite seu pedido">
+<button type="button" data-answer-button>Ver devolutiva</button>
+</div>
+</div>
+</form>
+<output aria-live="polite" hidden><strong data-title></strong><p data-answer></p><p data-code></p></output>
+</section>
+<script>
+(() => {
+ const root = document.getElementById('exemplificar-orientado');
+ const form = root.querySelector('[data-direct]');
+ const input = root.querySelector('textarea');
+ const picker = root.querySelector('[data-picker]');
+ const guidedButton = root.querySelector('[data-mode="guided"]');
+ let selectedFunction = '';
+ const guide = root.querySelector('[data-guide]');
+ const guidedField = root.querySelector('[data-guided-field]');
+ const guidedInput = guidedField.querySelector('input');
+ const labels = {
+  idea: 'Qual ideia você quer esclarecer?',
+  distinguish: 'Quais casos ou categorias você quer distinguir?',
+  do: 'Qual operação você quer aprender a fazer?',
+  transfer: 'Qual operação você quer reconhecer em outro contexto?',
+  learner: 'O que o aprendiz deve conseguir exemplificar?',
+  document: 'Que ocorrência você quer sustentar? Cole a fonte ou a passagem, se tiver.',
+  regular: 'Qual regularidade você quer investigar e em que conjunto de casos?',
+  counter: 'Qual afirmação universal você quer contestar?'
+ };
+ const result = root.querySelector('output');
+ const modes = root.querySelectorAll('[data-mode]');
+ function show(title, answer, code) {
+  root.querySelector('[data-title]').textContent = title;
+  root.querySelector('[data-answer]').textContent = answer;
+  root.querySelector('[data-code]').textContent = code;
+  result.hidden = false;
+ }
+ function showGuided() {
+  guidedField.hidden = !selectedFunction;
+  guidedInput.required = Boolean(selectedFunction);
+  if (selectedFunction) root.querySelector('[data-guided-label]').textContent = labels[selectedFunction];
+  result.hidden = true;
+ }
+ function setPicker(open) {
+  picker.hidden = !open;
+  guidedButton.setAttribute('aria-expanded', String(open));
+ }
+ modes.forEach(button => button.addEventListener('click', () => {
+  const guided = button === guidedButton;
+  const open = guided && picker.hidden;
+  setPicker(open);
+  guide.hidden = !guided || open || !selectedFunction;
+  form.hidden = guided;
+  result.toggleAttribute('data-inline', guided);
+  modes.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  result.hidden = true;
+  if (guided && !open) showGuided();
+ }));
+ root.querySelectorAll('[data-function]').forEach(button => button.addEventListener('click', () => {
+  selectedFunction = button.dataset.function;
+  setPicker(false);
+  guide.hidden = false;
+  showGuided();
+  guidedInput.focus();
+ }));
+ picker.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  event.preventDefault();
+  guidedButton.click();
+  guidedButton.focus();
+ });
+ guidedInput.addEventListener('input', showGuided);
+ function sendRequest(field, functionName) {
+  const request = field.value.trim();
+  if (!request) {
+   field.setCustomValidity('Digite o que você quer exemplificar.');
+   field.reportValidity();
+   return;
+  }
+  const mode = functionName
+   ? 'Pedido orientado. Função escolhida: ' + functionName + '.'
+   : 'Pedido direto. Identifique a função adequada ao pedido.';
+  const prompt = 'Use a skill Perelman para atender ao pedido abaixo. ' + mode +
+   '\n\nPedido do pesquisador:\n' + request +
+   '\n\nApresente a devolutiva nesta conversa, com o exemplo ou a análise, a fórmula EX aplicada e a justificativa. Identifique casos hipotéticos e, quando o pedido depender de evidência, indique o que a fonte permite afirmar.';
+  function showFallback() {
+   show('Continue na conversa', prompt, 'Copie e envie este pedido no chat.');
+  }
+  const host = window.openai;
+  if (typeof host?.sendFollowUpMessage !== 'function') { showFallback(); return; }
+  try {
+   const pending = host.sendFollowUpMessage({ prompt, title: 'Perelman' });
+   show('Devolutiva na conversa', 'O pedido foi encaminhado ao chat para aplicação do protocolo.', '');
+   Promise.resolve(pending).catch(showFallback);
+  } catch {
+   showFallback();
+  }
+ }
+ const functions = root.querySelectorAll('[data-function]');
+ function answerGuided() {
+  const option = Array.from(functions).find(button => button.dataset.function === selectedFunction);
+  if (option) sendRequest(guidedInput, option.textContent.trim());
+ }
+ guide.querySelector('[data-answer-button]').addEventListener('click', answerGuided);
+ guidedInput.addEventListener('keydown', event => {
+  if (event.key === 'Enter' && !event.isComposing) { event.preventDefault(); answerGuided(); }
+ });
+ for (const field of [input, guidedInput]) {
+  field.addEventListener('input', () => { field.setCustomValidity(''); result.hidden = true; });
+ }
+ form.querySelector('[data-answer-button]').addEventListener('click', () => sendRequest(input, ''));
+})();
+</script>
+</div>
+</body>
+</html>
