@@ -1,6 +1,6 @@
-# Perelman — protocolo v0.3.0
+# Perelman — protocolo v0.3.1
 
-Edição experimental publicada originalmente como `0.3`.
+Edição experimental publicada originalmente como `0.3`. A 0.3.1 é correção editorial da 0.3.0.
 
 ## 1. Finalidade e unidade de trabalho
 
@@ -114,7 +114,7 @@ Para **incluir** uma fórmula, apresentar fonte e localizador, estatuto da aprop
 
 ## 5. Conferência inicial e limites
 
-A grade foi confrontada com os três pedidos da conversa: sustentabilidade forte funciona como instância ilustrativa (EX01), a revisão comentada da pergunta histórica como exemplo resolvido (EX08) e a carta do Paty como caso documental de ocorrência (EX10). O confronto é uma checagem de coerência dos códigos, feita na mesma conversa. Uma comparação independente com comando comum e comando detalhado permanece por fazer.
+A grade foi confrontada com três pedidos da conversa de desenvolvimento: sustentabilidade forte funciona como instância ilustrativa (EX01), a revisão comentada da pergunta histórica como exemplo resolvido (EX08) e a carta do Paty como caso documental de ocorrência (EX10). O confronto é uma checagem de coerência dos códigos, feita na própria conversa de desenvolvimento. Uma comparação independente com comando comum e comando detalhado permanece por fazer.
 
 A grade mantém dez códigos. EX01 a EX08 e EX10 classificam a função ou a forma de apresentação. EX09 registra uma tarefa de produção pelo aprendiz em campo próprio. Uma atividade pode combinar códigos desde que cada operação seja demonstrada. Parte das âncoras contemporâneas foi conferida por resumo editorial. Para Perelman e Olbrechts-Tyteca, os parágrafos foram localizados pelo sumário e a distinção foi cotejada com uma exposição secundária. O protótipo indica essas remissões para permitir cotejo e revisão. A base retórica antiga desta versão é Aristóteles. Isidoro de Sevilha aparece como referência do procedimento de atribuição da grade de definições, sem figurar como fonte das fórmulas de exemplificação aqui propostas.
 
@@ -147,6 +147,8 @@ Pedido-modelo: “Use Perelman para preencher [EXEMPLO AQUI]. Preserve o argumen
 O mapa orienta a escolha inicial. As fichas da seção 3 determinam a aplicação e as combinações justificadas.
 
 ### Estrutura da devolutiva
+
+Em pedidos de geração e preenchimento de lacuna, apresente o exemplo, o parágrafo ou a atividade e acrescente uma nota breve com alvo, traço decisivo, fórmula, procedência e estatuto do caso. Preserve os limites documentais pertinentes. Use a estrutura completa abaixo na auditoria de exemplos e no modo Acervo.
 
 1. **Parecer.** Indicar se o caso cumpre a finalidade, cumpre parcialmente ou exige revisão. Quando a finalidade for gerar, apresentar o exemplo proposto.
 2. **Alvo e finalidade.** Transcrever ou identificar a afirmação ou operação e declarar para que o exemplo será usado.
@@ -188,8 +190,8 @@ Ativar quando o pesquisador pedir uma resposta restrita a uma base ou designar f
 3. **Responder.** Vincular cada exemplo ou afirmação substantiva a uma passagem identificável. Explicitar o alcance do caso. Se o pedido exigir comparação e houver suporte para apenas um caso, entregar esse resultado parcial e indicar o que falta para o contraste. Se a evidência for insuficiente, usar “Evidência insuficiente no material consultado”. Um resultado vazio se refere à busca realizada.
 4. **Conferir.** Verificar a correspondência entre ID, localizador e trecho antes da entrega. Quando houver verificação automatizada, usá-la para conferir essa correspondência e avaliar separadamente se a passagem sustenta a conclusão.
 
-**Estatuto nesta versão.** A base de mil livros é um recurso externo previsto. A consulta automatizada depende do acesso ao banco e da identificação do seu esquema. Antes de considerar a integração validada, testar um pedido com suporte suficiente, um com suporte parcial e um fora do material autorizado. O envio pela interface foi verificado em simulação. A chamada direta da skill já produziu uma devolutiva EX04 na conversa.
+**Estatuto nesta versão.** A base de mil livros é um recurso externo previsto. A consulta automatizada depende do acesso ao banco e da identificação do seu esquema. Antes de considerar a integração validada, testar um pedido com suporte suficiente, um com suporte parcial e um fora do material autorizado. O envio pela interface foi verificado em simulação. A chamada direta da skill produziu uma devolutiva EX04 em conversa de desenvolvimento.
 
 ## 9. Fechamento da versão 0.3.0
 
-Esta versão consolida os dois modos de pedido, o preenchimento de lacunas, o mapa das oito funções e o procedimento do modo Acervo. A versão 0.2 documenta a etapa anterior. A validação do fluxo com a base de mil livros depende da sua disponibilização.
+Esta versão consolida os dois modos de pedido, o preenchimento de lacunas, o mapa das oito funções e o procedimento do modo Acervo. A versão 0.2 documenta a etapa anterior. A validação do fluxo com a base de mil livros depende da sua disponibilização. A versão 0.3.1 não altera fichas, funções ou procedimentos.

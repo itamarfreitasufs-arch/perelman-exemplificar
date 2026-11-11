@@ -1,5 +1,12 @@
 # Histórico de desenvolvimento
 
+## 0.3.1 — 11 de novembro de 2026 — experimental
+
+Correção editorial, sem mudança nas fichas EX01–EX10 e sem novos ensaios.
+
+- Substitui no protocolo as referências a “a conversa” por “conversa de desenvolvimento”, para que não sejam lidas como a conversa em curso.
+- Identifica a versão no SKILL.md e orienta a proporção da devolutiva: nota curta em geração e preenchimento de lacuna, estrutura completa em auditoria e no modo Acervo.
+
 ## 0.3.0 — experimental
 
 Forma padronizada da edição publicada como `0.3` no [commit da publicação original](https://github.com/itamarfreitasufs-arch/perelman-exemplificar/commit/3a6232b246b87267e2bd45a8f15477db0df2ad6d). A padronização é editorial.
